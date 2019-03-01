@@ -1,0 +1,14 @@
+
+.FormContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.InputField {
+    width: 20vw;
+}
+
+.FormButton {
+    margin: 10%;
+    align-self: center;
+}

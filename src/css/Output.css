@@ -1,0 +1,14 @@
+
+.Output {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.error-text {
+    color: #fb414e;
+}
+
+.response-text {
+    color: #bfbfbf;
+}
