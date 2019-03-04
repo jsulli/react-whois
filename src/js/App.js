@@ -9,7 +9,7 @@ export default class App extends Component {
     constructor() {
         super()
 
-        this.state = { apiState: ApiState.IDLE, response: "", address: ""}
+        this.state = { apiState: null, response: "", address: ""}
         this.whoIsApi = new WhoisApi()
         this.whoIsApi.onChangeListener((state, response) => {
             this.setState({apiState: state, response})

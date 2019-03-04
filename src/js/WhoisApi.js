@@ -2,10 +2,6 @@
 
 export class WhoisApi {
 
-    constructor() {
-        this.state = ApiState.IDLE;
-    }
-
     submit(address) {
         this.setState(ApiState.LOADING)
         return new Promise((resolve, reject) => {
@@ -37,7 +33,6 @@ export class WhoisApi {
     }
 
     setState(state, response) {
-        this.state = state;
         this.change(state, response, )
     }
 
@@ -48,8 +43,7 @@ export class WhoisApi {
 
 
 export const ApiState = {
-    IDLE: 0,
-    LOADING: 1,
-    ERROR: 2,
-    SUCCESS: 3
+    LOADING: 0,
+    ERROR: 1,
+    SUCCESS: 2
 }
