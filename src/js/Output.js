@@ -28,7 +28,7 @@ export default class Output extends Component {
 
     showResults() {
         if(this.api.state === ApiState.ERROR) {
-            return <div className="error-text"><p>Error: No response for [{this.api.value}], try again</p></div>
+            return <div className="error-text"><p>Error: Invalid address [{this.api.value}], try again</p></div>
         } else if (this.api.state === ApiState.SUCCESS) {
             return <div className="response-text"><p>{this.api.response}</p></div>
         } else {

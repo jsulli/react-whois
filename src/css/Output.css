@@ -1,6 +1,5 @@
 
 .Output {
-    margin-top: 5vh;
     display: flex;
     flex-direction: column;
 }
@@ -11,4 +10,8 @@
 
 .response-text {
     color: #bfbfbf;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    margin: 0 10%;
+    width: 60vw;
 }

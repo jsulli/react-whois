@@ -17,7 +17,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <p>Input something to find out things you shouldn't know</p>
+          <p>Input something to find out things about it!</p>
         </header>
         <Input whoisApi={this.whoIsApi} />
         <Output whoisApi={this.whoIsApi}/>

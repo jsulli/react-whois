@@ -3,6 +3,10 @@
 # idea
 .idea/
 
+# terraform
+.terraform/
+*.tfstate*
+
 # dependencies
 /node_modules
 /.pnp
