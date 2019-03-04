@@ -1,19 +1,18 @@
 
 
-export default class WhoisApi {
+export class WhoisApi {
 
     constructor() {
         this.state = ApiState.IDLE;
     }
 
-    submit(value) {
-        this.state = ApiState.LOADING
-        this.update()
+    submit(address) {
+        this.setState(ApiState.LOADING)
         return new Promise((resolve, reject) => {
-            console.log("address: " + value)
+            console.log("address: " + address)
             // I was hoping I could do something cleaner than this, but the AWS SDK doesn't seem
             // to offer any better implementations. Hardcoded link it is.
-            fetch('https://dr5uhki0g9.execute-api.us-east-1.amazonaws.com/dev/whois/' + value)
+            fetch('https://dr5uhki0g9.execute-api.us-east-1.amazonaws.com/dev/whois/' + address)
                 .then(response => response.text())
                 .then(data => {
                     //do a little surgery to the malformed json
@@ -22,34 +21,28 @@ export default class WhoisApi {
 
                     if(data === "ERROR") {
                         console.log("ERROR")
-                        this.state = ApiState.ERROR
-                        this.update()
+                        this.setState(ApiState.ERROR, address)
                         resolve()
                     } else {
-                        this.state = ApiState.SUCCESS
-                        this.response = data
-                        this.update()
+                        this.setState(ApiState.SUCCESS, data)
                         resolve()
                     }
                 })
                 .catch(err => {
                     console.log(err)
-                    this.state = ApiState.ERROR
-                    this.update()
+                    this.setState(ApiState.ERROR, address)
                     reject()
                 })
-
-            // do api stuff
-            this.value = value;
         })
     }
 
-    update() {
-        if(this.onUpdate) this.onUpdate()
+    setState(state, response) {
+        this.state = state;
+        this.change(state, response, )
     }
 
-    updateListener(listener) {
-        this.onUpdate = listener
+    onChangeListener(change) {
+        this.change = change
     }
 }
 

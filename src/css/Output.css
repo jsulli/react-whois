@@ -1,9 +1,4 @@
 
-.Output {
-    display: flex;
-    flex-direction: column;
-}
-
 .error-text {
     color: #fb414e;
 }

@@ -3,9 +3,8 @@ import '../css/form.css'
 
 export default class Input extends Component {
 
-    constructor({whoisApi}) {
-        super()
-        this.api = whoisApi
+    constructor(props) {
+        super(props)
         this.state = { value: "", }
         this.passValue = this.passValue.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
@@ -15,7 +14,7 @@ export default class Input extends Component {
 
     passValue() {
         console.log("passing value of: " + this.state.value)
-        this.api.submit(this.state.value)
+        this.props.submit(this.state.value)
         this.setState({ value: "" })
     }
 
