@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import '../css/App.css'
 import Input from "./Input"
-import {WhoisApi, ApiState} from "./WhoisApi"
+import { WhoisApi } from "./WhoisApi"
 import Output from "./Output"
 
 export default class App extends Component {
@@ -9,10 +9,10 @@ export default class App extends Component {
     constructor() {
         super()
 
-        this.state = { apiState: null, response: "", address: ""}
+        this.state = { apiState: null, response: "", address: "" }
         this.whoIsApi = new WhoisApi()
         this.whoIsApi.onChangeListener((state, response) => {
-            this.setState({apiState: state, response})
+            this.setState({ apiState: state, response })
         })
         this.submitAddress = this.submitAddress.bind(this)
     }
@@ -30,11 +30,11 @@ export default class App extends Component {
                     <p>Input something to find out things about it!</p>
                 </header>
 
-                <Input submit={this.submitAddress}/>
+                <Input submit={ this.submitAddress }/>
 
                 <Output
-                    apiState={this.state.apiState}
-                    response={this.state.response}
+                    apiState={ this.state.apiState }
+                    response={ this.state.response }
                 />
             </div>
         )

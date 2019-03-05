@@ -1,10 +1,10 @@
-import {ApiState, WhoisApi} from "../js/WhoisApi"
+import { ApiState, WhoisApi } from "../js/WhoisApi"
 
 
 it("gets response from API Gateway", () => {
     const api = new WhoisApi()
     api.submit("test.null").then((state, address) => {
-        expect([ApiState.SUCCESS, ApiState.ERROR_BAD_ADDRESS]).toContain(state)
+        expect([ ApiState.SUCCESS, ApiState.ERROR_BAD_ADDRESS ]).toContain(state)
     })
 })
 

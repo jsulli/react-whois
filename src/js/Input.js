@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import '../css/form.css'
 
 export default class Input extends Component {
@@ -20,8 +20,8 @@ export default class Input extends Component {
 
 
     onSubmit(ev) {
-        if(ev.key === "Enter") {
-            this.passValue();
+        if (ev.key === "Enter") {
+            this.passValue()
             ev.target.value = ""
         }
     }
@@ -33,17 +33,21 @@ export default class Input extends Component {
     }
 
 
-    render() { return (
-        <div className="FormContainer">
-            <input type="text"
-                   className="form-control InputField"
-                   placeholder="IP or Domain"
-                   aria-label="ip"
-                   onKeyDown={this.onSubmit}
-                   onChange={this.handleChange}
-                   value={this.state.value}>
-            </input>
-            <button className="btn btn-outline-light FormButton" onClick={this.passValue}>Submit</button>
-        </div>
-    )}
+    render() {
+        return (
+            <div className="FormContainer">
+                <input type="text"
+                       className="form-control InputField"
+                       placeholder="IP or Domain"
+                       aria-label="ip"
+                       onKeyDown={ this.onSubmit }
+                       onChange={ this.handleChange }
+                       value={ this.state.value }>
+                </input>
+                <button className="btn btn-outline-light FormButton"
+                        onClick={ this.passValue }>Submit
+                </button>
+            </div>
+        )
+    }
 }

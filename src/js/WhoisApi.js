@@ -1,5 +1,3 @@
-
-
 export class WhoisApi {
 
     submit(address) {
@@ -15,7 +13,7 @@ export class WhoisApi {
                     data = data.substr(14)
                     data = data.slice(0, -4)
 
-                    if(data === "ERROR_BAD_ADDRESS") {
+                    if (data === "ERROR_BAD_ADDRESS") {
                         this.setState(ApiState.ERROR_BAD_ADDRESS, address)
                         resolve(ApiState.ERROR_BAD_ADDRESS, address)
                     } else {
@@ -31,7 +29,7 @@ export class WhoisApi {
     }
 
     setState(state, response) {
-        if(!this.change) return
+        if (!this.change) return
         this.change(state, response)
     }
 
