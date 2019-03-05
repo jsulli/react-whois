@@ -14,7 +14,7 @@ export default class Output extends Component {
             case ApiState.SUCCESS:
                 return <div className="response-text"><p>{ this.props.response }</p></div>
             case ApiState.LOADING:
-                return <div className="spinner-border text-light">
+                return <div className="loading spinner-border text-light">
                     <span className="sr-only">Loading</span>
                 </div>
             default:
