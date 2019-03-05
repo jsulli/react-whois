@@ -1,16 +1,14 @@
 import React from 'react'
 import { mount } from 'enzyme'
-import { WhoisApi } from "../js/WhoisApi"
 import Input from "../js/Input"
 
-const api = new WhoisApi()
 
 test('Input has input field', () => {
-
     const wrapper = mount(<Input/>)
     const input = wrapper.find("input")
     expect(input.exists()).toEqual(true)
 })
+
 
 test('Input value changes component state', () => {
     const wrapper = mount(<Input/>)
@@ -37,8 +35,7 @@ test('Submitting value from input calls up to parent component', () => {
 
 test('Submitting value clears input field', () => {
     const data = "value"
-    const submit = (address) => {
-    }
+    const submit = (address) => {}
 
     const wrapper = mount(<Input submit={submit}/>)
     const input = wrapper.find("input")

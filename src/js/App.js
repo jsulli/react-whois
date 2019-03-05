@@ -26,6 +26,7 @@ export default class App extends Component {
     render() {
         return (
             <div className="App">
+
                 <header className="App-header">
                     <p>Input something to find out things about it!</p>
                 </header>
@@ -36,6 +37,7 @@ export default class App extends Component {
                     apiState={ this.state.apiState }
                     response={ this.state.response }
                 />
+
             </div>
         )
     }

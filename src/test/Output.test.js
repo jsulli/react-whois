@@ -46,6 +46,7 @@ test('Output shows loading indicator when loading', () => {
     expect(wrapper.exists(".loading")).toEqual(true)
 })
 
+
 test('Output shows nothing when idle', () => {
     const wrapper = mount(
         <Output apiState={null} response={null}/>
