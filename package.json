@@ -12,7 +12,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run-script build && cd build && aws s3 sync . s3://www.josephs3d.com/"
   },
   "eslintConfig": {
     "extends": "react-app"
